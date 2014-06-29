@@ -1,0 +1,17 @@
+{ "name": "loadjsons"
+, "description": "Load JSON from multiple files"
+, "keywords": [ "json", "nodejs", "load" ]
+, "version": "0.0.1alpha"
+, "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
+, "repository": { "type": "git", "url": "git://github.com/ajlopez/LoadJsons.git" }
+, "main": "./lib/loadjsons.js"
+, "engines": { "node": ">= 0.6.0 && < 0.13.0" }
+, "scripts": {
+    "test": "simpleunit test"
+  }
+, "dependencies": {
+  }
+, "devDependencies": {
+    "simpleunit": "0.0.4"
+  }
+}

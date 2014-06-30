@@ -10,6 +10,15 @@ exports['Load simple JSON'] = function (test) {
     process.chdir('..');
 }
 
+exports['Load simple JSON with explicit extension'] = function (test) {
+    process.chdir('test');
+    var simple = lj.load('simple.json');
+    
+    test.ok(simple);
+    test.equal(simple.title, 'Simple JSON');
+    process.chdir('..');
+}
+
 exports['Load composite JSON'] = function (test) {
     process.chdir('test');
     var compose = lj.load('compose');

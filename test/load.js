@@ -47,3 +47,13 @@ exports['Load composite JSON from directory'] = function (test) {
     test.equal(typeof compose.project, "object");
     test.equal(compose.project.title, 'Simple JSON');
 }
+
+exports['Load JSON with escape'] = function (test) {
+    process.chdir('test');
+    var compose = lj.load('escape');
+    
+    test.ok(compose);
+    test.equal(compose.author, "ajlopez");
+    test.equal(compose.project, "$simple");
+    process.chdir('..');
+}

@@ -1,0 +1,8 @@
+{
+    "project": "entities",
+    "author": "ajlopez",
+    "entities": [
+        "$customer",
+        "$supplier"
+    ]
+}

@@ -57,3 +57,20 @@ exports['Load JSON with escape'] = function (test) {
     test.equal(compose.project, "$simple");
     process.chdir('..');
 }
+
+exports['Load JSON with references in array'] = function (test) {
+    process.chdir('test');
+    var entities = lj.load('entities');
+    
+    test.ok(entities);
+    test.ok(Array.isArray(entities.entities));
+    test.equal(entities.entities.length, 2);
+    test.equal(typeof entities.entities[0], 'object');
+    test.equal(typeof entities.entities[1], 'object');
+    test.equal(entities.entities[0].name, 'customer');
+    test.equal(entities.entities[1].name, 'supplier');
+    test.equal(entities.entities[0].title, 'Customer');
+    test.equal(entities.entities[1].title, 'Supplier');
+
+    process.chdir('..');
+}

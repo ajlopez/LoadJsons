@@ -21,6 +21,43 @@ var lj = require('loadjsons');
 var json = lj.load('project');
 ```
 
+The elements of the JSON file to load can be strings with reference to other JSON files, relative to the parent
+file being loaded. The reference starts with `$`.
+
+Example. Parent file:
+```json
+{
+    "project": "$simple",
+    "author": "adam"
+}
+```
+
+`simple.json` in the same directory:
+```json
+{
+    "title": "Simple JSON"
+}
+```
+
+Result:
+```json
+{
+    "project": {
+        "title": "Simple JSON"
+    },
+    "author": "adam"
+}
+```
+
+To escape the initial `$` use `\`:
+```json
+{
+    "project": "\\$simple",
+    "author": "adam"
+}
+```
+
+
 ## To Do
 
 TBD
@@ -40,7 +77,7 @@ TBD
 
 ## Versions
 
-TBD
+0.0.1 Published
 
 ## License
 
